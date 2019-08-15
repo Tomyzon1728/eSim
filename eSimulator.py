@@ -3,6 +3,7 @@ from tkinter import *
 from PIL import Image,ImageTk
 from tkinter.filedialog import askopenfilename,asksaveasfilename
 from tkinter.messagebox import askquestion,showinfo
+import time;
 #----------------------------------------------------------------------------------------------------------------
 root = Tk()
 root.title(' Shugar-eSim')
@@ -13,7 +14,8 @@ w.pack(fill = X)
 mcontent = Text(w, bg='white',width=40,relief= 'flat',height=1)
 mcontent.pack(side = 'right')
 #================================================================================================================
-x = Label(root,bg ='white')
+localtime = time.asctime(time.localtime(time.time()))
+x = Label(root,bg ='white', text = localtime)
 x.pack(fill = X)
 y = Label(root,bg =  '#F08080')
 y.pack(side = 'bottom',fill = X)
@@ -51,12 +53,12 @@ btnii.grid(row = 3, column = 0)
 btnii = Button(frmR,height = 60,image= rendern,relief= 'flat',command = lambda:newpage,padx=2, width = 140)
 btnii.grid(row = 4, column = 0)
 #----------------------------------------------------------------------------------------------------------------
-frm = Frame(root)
-frm.pack(side = 'left')
-canvas = Canvas(frm, bg='#FFFACD', height = 530,width =1030)
+frmCan = Frame(root)
+frmCan.pack(side = 'left')
+canvas = Canvas(frmCan, bg='#FFFACD', height = 530,width =1030)
 canvas.grid(row = 0, column  =0)
-scrolly = Scrollbar (frm, orient = 'vertical', command = canvas.yview)
-scrollx = Scrollbar (frm, orient = 'horizontal', command = canvas.xview)
+scrolly = Scrollbar (frmCan, orient = 'vertical', command = canvas.yview)
+scrollx = Scrollbar (frmCan, orient = 'horizontal', command = canvas.xview)
 scrolly.grid(row =0, column = 1,sticky = 'ns' )
 scrollx.grid(row = 1, column = 0, sticky = 'ew')
 canvas.configure(yscrollcommand = scrolly.set)
