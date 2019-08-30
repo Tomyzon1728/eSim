@@ -4,7 +4,7 @@ from PIL import Image,ImageTk
 from tkinter.filedialog import askopenfilename,asksaveasfilename
 from tkinter.messagebox import askquestion,showinfo
 from tkinter.colorchooser import*
-import time;
+import time; #we just use this to test for remote collaboration.
 #----------------------------------------------------------------------------------------------------------------
 root = Tk()
 root.title(' Shugar-eSim')
